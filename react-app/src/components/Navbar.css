@@ -1,0 +1,29 @@
+.header{
+    width: 100%;
+    padding:30px 0;
+    box-sizing: border-box;
+    margin-bottom: 80px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.Logo{
+    font-weight: bold;
+    color:var(--heading-color);
+    letter-spacing: 1px;
+align-items: center;
+margin-right: auto;
+}
+
+.Logo img{
+width: 36px;
+margin-right: 10px;
+margin-top: -8px;
+}
+
+.header a{
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+}
