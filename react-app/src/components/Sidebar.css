@@ -1,11 +1,11 @@
 .sidebar{
-width: 150px;
+width: 180px;
 min-width:220px;
 background: lightcoral;
 min-height: 100vh;
 box-sizing:border-box;
 position:relative;
-color:#fff;
+
 }
 
 .sidebar-content{
@@ -34,18 +34,18 @@ color:#fff;
     padding: 10px;
     text-decoration:none;
     width: 100%;
-    color:black;
     box-sizing: border-box;
-    color:#fff;
+  color:black
 }
 
  .sidebar img{
-    width: 36px;
+    width: 30px;
     margin-right: 10px;
-    background-color: transparent;
+  
    
 }
 
 .sidebar a.active{
-    color:#555
+    color:#555;
+    
 }

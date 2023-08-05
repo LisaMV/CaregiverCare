@@ -1,40 +1,46 @@
-import { createContext, useReducer, useEffect } from 'react'
-import { projectAuth } from '../Firebase'
+import { useContext,createContext, useEffect, useState} from 'react'
 
-export const AuthContext = createContext()
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  signOut,
+  onAuthStateChanged,
+} from 'firebase/auth';
+import { auth } from '../Firebase';
 
-export const authReducer = (state, action) => {
-  switch (action.type) {
-    case 'LOGIN':
-      return { ...state, user: action.payload }
-    case 'LOGOUT':
-      return { ...state, user: null }
-    case 'AUTH_IS_READY':
-      return { user: action.payload, authIsReady: true }
-    default:
-      return state
-  }
-}
+const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(authReducer, { 
-    user: null,
-    authIsReady: false
-  })
+  const [user, setUser] = useState({});
+
+  const googleSignIn = () => {
+    const provider = new GoogleAuthProvider();
+     signInWithPopup(auth, provider);
+    //signInWithRedirect(auth, provider)
+  };
+
+  const logOut = () => {
+      signOut(auth)
+  }
 
   useEffect(() => {
-    const unsub = projectAuth.onAuthStateChanged(user => {
-      dispatch({ type: 'AUTH_IS_READY', payload: user })
-      unsub()
-    })
-  }, [])
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      console.log('User', currentUser)
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
-  console.log('AuthContext state:', state)
-  
   return (
-    <AuthContext.Provider value={{ ...state, dispatch }}>
-      { children }
+    <AuthContext.Provider value={{ googleSignIn, logOut, user }}>
+      {children}
     </AuthContext.Provider>
-  )
+  );
+};
 
-}
+export const UserAuth = () => {
+  return useContext(AuthContext);
+};

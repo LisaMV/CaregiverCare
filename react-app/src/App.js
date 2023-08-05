@@ -1,3 +1,4 @@
+
 import {BrowserRouter,Route,Switch} from 'react-router-dom'
 import './App.css';
 
@@ -12,8 +13,11 @@ import Login from './components/login';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 
+//import UserAuth
+import { UserAuth } from './context/AuthContext';
 
 function App() {
+  const {user}=UserAuth();
   return (
     <div className="App">
       <BrowserRouter>
@@ -22,16 +26,16 @@ function App() {
         <Navbar/>
         <Switch>
           <Route  exact path='/'>
-            <Dashboard/>
+            {user ? <Dashboard/> :<Login/>}
           </Route>
           <Route path ="/addclients">
-            <AddClients/>
+            {user ? <AddClients/> :<Login/>}
           </Route>
           <Route path ="/calendar">
-            <Calendar/>
+           {user ?  <Calendar/> :<Login/>}
           </Route>
           <Route path ="/createvisit">
-            <CreateVisit/>
+            {user ? <CreateVisit/> : <Login/>}
           </Route>
           <Route path ="/login">
             <Login/>

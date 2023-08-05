@@ -1,8 +1,12 @@
 
+import React,{useState} from 'react'
+
+
 export default function AddClients(){
-    return(
-        <div>
-            Add Clients
-        </div>
-    )
-}
+
+return(
+    <div>
+      clients
+    </div>
+);
+};

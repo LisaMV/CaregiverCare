@@ -2,15 +2,17 @@ import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 import CalendarIcon from '../assests/CalendarIcon.svg';
 import AddClient from '../assests/AddClient.svg';
-import VisitIcon from '../assests/VisitIcon.jpg';
+import VisitIcon from '../assests/VisitIcon.svg';
 import DashboardIcon from '../assests/Home.svg';
-
+import { UserAuth } from '../context/AuthContext';
 export default function Sidebar() {
+  const {user}=UserAuth();
   return (
     <div className='sidebar'>
       <div className='sidebar-content'>
         <div className='user'>
-          <p>Hey user</p>
+          {!user && <p>Hey user</p>}
+         {user && <p>Hey {user.displayName}</p>}
         </div>
         <nav className='link'>
           <ul>
