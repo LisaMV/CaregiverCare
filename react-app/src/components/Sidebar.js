@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
-import CalendarIcon from '../assests/CalendarIcon.svg';
+
 import AddClient from '../assests/AddClient.svg';
 import VisitIcon from '../assests/VisitIcon.svg';
 import DashboardIcon from '../assests/Home.svg';
@@ -20,10 +20,7 @@ export default function Sidebar() {
               <img src={DashboardIcon} alt='dashboard icon' />
               <span>Dashboard</span>
             </NavLink>
-            <NavLink to='/calendar'>
-              <img src={CalendarIcon} alt='calendar icon' />
-              <span>Calendar</span>
-            </NavLink>
+           
             <NavLink to='/addclients'>
               <img src={AddClient} alt='add client icon' />
               <span>Add Client</span>

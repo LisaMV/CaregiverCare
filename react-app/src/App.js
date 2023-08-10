@@ -7,7 +7,7 @@ import './App.css';
 //components 
 import Dashboard from './components/Dashboard';
 import AddClients from './components/addclients';
-import Calendar from './components/calendar';
+
 import CreateVisit from './components/createvisit';
 import Login from './components/login';
 import Navbar from './components/Navbar';
@@ -31,9 +31,7 @@ function App() {
           <Route path ="/addclients">
             {user ? <AddClients/> :<Login/>}
           </Route>
-          <Route path ="/calendar">
-           {user ?  <Calendar/> :<Login/>}
-          </Route>
+          
           <Route path ="/createvisit">
             {user ? <CreateVisit/> : <Login/>}
           </Route>

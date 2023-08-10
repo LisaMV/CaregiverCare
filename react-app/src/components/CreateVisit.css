@@ -1,5 +1,5 @@
 .create-visit {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -40,6 +40,10 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+  }
+
+  .notes{
+    width: 500px;
   }
   
   button {
