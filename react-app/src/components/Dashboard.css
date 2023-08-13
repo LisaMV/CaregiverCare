@@ -1,0 +1,97 @@
+/* Dashboard.css */
+
+/* Main container */
+.dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 70px;
+    margin-left: 200px;
+}
+
+/* Table styles */
+.visit-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 80px;
+    margin-left: 50px;
+}
+
+/* Table header */
+.visit-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table data rows */
+.visit-row {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.visit-row:hover {
+    background-color: #f5f5f5;
+}
+
+/* Visit details row */
+.visit-details-row {
+    background-color: #f2f2f2;
+}
+
+.visit-details {
+    padding: 10px;
+}
+
+/* Edit buttons */
+.edit-buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    background-color:  #ffcccc;
+    color: black;
+    border-radius: 4px;
+}
+
+/* Edit buttons on hover */
+.edit-buttons button:hover {
+    background-color:  #ffcccc;
+}
+
+/* Textarea for editing notes */
+textarea {
+    width: 100%;
+    padding: 5px;
+}
+
+/* Delete button */
+.visit-row button {
+    background-color: #ffcccc;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Delete button on hover */
+.visit-row button:hover {
+    background-color:  #ffcccc;
+}
+
+/* Tablet and mobile responsiveness */
+@media (max-width: 768px) {
+    .visit-table th,
+    .visit-row td {
+        font-size: 14px;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .visit-table th,
+    .visit-row td {
+        font-size: 12px;
+    }
+}

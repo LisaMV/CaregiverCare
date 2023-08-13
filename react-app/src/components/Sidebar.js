@@ -8,6 +8,7 @@ import { UserAuth } from '../context/AuthContext';
 export default function Sidebar() {
   const {user}=UserAuth();
   return (
+    <div className='page-container'>
     <div className='sidebar'>
       <div className='sidebar-content'>
         <div className='user'>
@@ -32,6 +33,7 @@ export default function Sidebar() {
           </ul>
         </nav>
       </div>
+    </div>
     </div>
   );
 }

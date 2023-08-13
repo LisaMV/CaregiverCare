@@ -16,6 +16,7 @@ export default function Navbar(){
   }
 
   return (
+    <div className='main-content'>
     <div className='header'>
       <div className='Logo'>
         <img src={Logo} alt='logo' />
@@ -29,6 +30,7 @@ export default function Navbar(){
       ) : (
         <Link to='/login'>Login</Link>
       )}
+    </div>
     </div>
   );
 }
